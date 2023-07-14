@@ -83,3 +83,23 @@ for i in range(25) :
     plt.xlabel("%s p%s y%s" %(p_wrong[i], class_names[np.argmax(p_test[p_wrong[i]])], class_names[y_test[p_wrong[i]]]))
 plt.show()
 
+x = 2
+t = 10
+w = 3
+b = 1
+
+y = x*w + 1*b
+print('y=%6.3f' %y)
+
+yb = y-t
+xb = yb*w
+wb = yb*x
+bb = yb*b
+print('xb=%6.3f wb=%6.3f bb=%6.3f' %(xb, wb, bb))
+
+lr=0.01
+w=w-(wb*lr)
+b=b-(bb-lr)
+print('x=%6.3f w=%6.3f b=%6.3f' %(x, w, b))
+
+
