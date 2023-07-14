@@ -103,3 +103,31 @@ b=b-(bb-lr)
 print('x=%6.3f w=%6.3f b=%6.3f' %(x, w, b))
 
 
+#약 200번의 반복으로 값만 입력해서 y=3x+1이라는 함수식을 만들 수 있다.
+xs = [-1.,0.,1.,2.,3.,4.]
+ys = [-2.,1.,4.,7.,10.,13.]
+w = 10.
+b = 10.
+
+for epoch in range(2000) :
+    for n in range(6) :
+        y = xs[n]*w + b*1
+
+        #오차율 구하기
+        t=ys[n]
+        E=(y-t)**2/2
+
+
+        #역전파 구하기
+        yb = y-t
+        wb = yb*xs[n]
+        bb = yb*1
+
+        #학습시키기
+        lr=0.01
+        w = w-lr*wb
+        b = b-lr*bb
+        if epoch%200==1 and n==0:
+            print("w:%6.3f, b:%6.3f" %(w,b))
+
+
