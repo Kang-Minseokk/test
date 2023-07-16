@@ -123,7 +123,7 @@ for epoch in range(2000) :
         wb = yb*xs[n]
         bb = yb*1
 
-        #학습시키기
+        #학습시키기.
         lr=0.01
         w = w-lr*wb
         b = b-lr*bb
